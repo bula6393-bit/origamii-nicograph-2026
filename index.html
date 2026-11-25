@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="558件の文献記録から、折り紙の形・根拠・比較条件を調べる日本語の研究用プロトタイプ。">
+<title>折り紙パターン選定支援｜NICOGRAPH 2026</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="visitor.css">
+</head>
+<body>
+<div class="visitor" id="visitor-demo">
+  <header class="visitor-bar">
+    <div class="visitor-width visitor-bar-inner">
+      <div class="visitor-brand">
+        <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M2 11 16 4l14 7-14 17Z"/><path d="m2 11 14 6 14-6M16 4v24"/></svg>
+        <span>折り紙パターン選定支援</span>
+      </div>
+      <div class="visitor-bar-actions">
+        <span>NICOGRAPH 2026</span>
+        <button type="button" data-go="explore">6つの形を見る</button>
+      </div>
+    </div>
+  </header>
+  <main id="visitor-main">
+    <section class="visitor-hero" aria-labelledby="visitor-title">
+      <div class="visitor-width visitor-hero-inner">
+        <div class="visitor-intro">
+          <p class="visitor-kicker">ケーススタディ ／ 展開式冷却フィン</p>
+          <h1 id="visitor-title">折り紙で、どう冷やす？</h1>
+          <p class="visitor-subtitle">使うときに広げ、使わないときにたたむ冷却フィン。<br>文献の数字を見比べ、どこまで判断できるか確かめます。</p>
+          <button type="button" class="visitor-start" id="visitor-start">放熱の根拠を比べる</button>
+          <div class="visitor-stats"><span><b>26</b> 文献</span><span><b>558</b> 記録</span><span><b>6</b> 候補</span><span><b>8</b> 評価項目</span></div>
+        </div>
+        <div class="visitor-models" aria-label="冷却フィンのケーススタディに登場する2つの模式図">
+          <figure><canvas id="visitor-miura" aria-hidden="true"></canvas><figcaption><strong>Miura</strong><span>三浦折り</span></figcaption></figure>
+          <figure><canvas id="visitor-kresling" aria-hidden="true"></canvas><figcaption><strong>Kresling</strong><span>クレスリング</span></figcaption></figure>
+          <small>折り紙パターンの模式図</small>
+        </div>
+      </div>
+    </section>
+    <section class="visitor-width visitor-case" id="visitor-case" tabindex="-1" aria-labelledby="visitor-case-heading">
+      <div class="visitor-case-head">
+        <div><p class="visitor-kicker">文献根拠から探る</p><h2 id="visitor-case-heading">候補を比較できる？</h2></div>
+        <div class="visitor-tabs" role="group" aria-label="評価項目を切り替える">
+          <button type="button" data-visitor-key="C1" aria-pressed="false"><b>C1</b> 展開・収納</button>
+          <button type="button" data-visitor-key="C3" aria-pressed="false"><b>C3</b> 構造安定</button>
+          <button type="button" data-visitor-key="C4" aria-pressed="true"><b>C4</b> 放熱</button>
+          <button type="button" data-visitor-key="C8" aria-pressed="false"><b>C8</b> 軽量</button>
+        </div>
+      </div>
+      <div id="visitor-result" aria-live="polite"></div>
+      <div class="visitor-actions">
+        <button type="button" class="visitor-primary" id="visitor-compare">記録と条件を詳しく見る</button>
+        <button type="button" id="visitor-gap">Waterbombの放熱が未評価の理由</button>
+      </div>
+    </section>
+    <section class="visitor-width visitor-more" aria-labelledby="visitor-more-heading">
+      <h2 id="visitor-more-heading">ほかの候補も調べる</h2>
+      <div>
+        <button type="button" data-go="explore"><strong>6つの折り紙を動かす</strong><span>模式図で形の違いを確かめる</span></button>
+        <button type="button" id="visitor-matrix"><strong>6候補 × 8項目を確認</strong><span>根拠の有無と比較条件を見る</span></button>
+        <button type="button" data-go="library"><strong>文献記録を検索</strong><span>出典・報告値・試験条件をたどる</span></button>
+      </div>
+    </section>
+  </main>
+  <footer class="visitor-width visitor-footer">
+    <span>開志創造大学大学院 MOTプログラム ／ NICOGRAPH 2026 展示用試作</span>
+    <button type="button" data-go="about">出典と研究の範囲</button>
+  </footer>
+</div>
+
+<div class="app" id="research-app" hidden><a class="skip" href="#main-content">本文へ移動</a>
+<aside class="sidebar"><a class="brand" href="#explore" aria-label="Origami Evidence Studio ホーム"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 13 20 4l17 9-17 24Z" fill="#8c9dff"/><path d="m3 13 17 6L20 4m0 15 17-6M20 19v18" fill="none" stroke="#d9e0ff" stroke-width="1.3"/></svg><span><strong>ORIGAMI</strong><small>EVIDENCE STUDIO</small></span></a>
+<div class="side-label">RESEARCH WORKSPACE</div><nav class="side-nav" aria-label="ワークスペース"><button type="button" data-view="explore" aria-current="page"><svg class="icon"><use href="#i-shape"/></svg><span class="nav-label">パターンを探索</span></button><button type="button" data-view="library"><svg class="icon"><use href="#i-book"/></svg><span class="nav-label">根拠を調べる</span><span class="nav-count">558</span></button><button type="button" data-view="compare"><svg class="icon"><use href="#i-compare"/></svg><span class="nav-label">条件を比較</span></button><button type="button" data-view="plan"><svg class="icon"><use href="#i-note"/></svg><span class="nav-label">次の検証を考える</span></button><button type="button" data-view="about"><svg class="icon"><use href="#i-info"/></svg><span class="nav-label">データと研究の範囲</span></button></nav>
+<div class="side-note"><strong><span class="dot"></span>データベース V28</strong>26文献 / 558記録<br>提供Excelを読み込んだ固定版<button type="button" data-go="about">出典と制約を確認する ↗</button></div>
+</aside>
+<div class="main-shell"><header class="app-header"><div class="breadcrumb"><span class="breadcrumb-context">研究プロトタイプ</span><strong id="breadcrumb-current">パターン探索</strong></div><div class="header-tools"><button type="button" class="btn exhibit-back" data-go="demo">展示デモ</button><form id="global-search-form" class="header-search" role="search"><svg class="icon"><use href="#i-search"/></svg><label class="visually-hidden" for="global-search">データベース全体を検索</label><input id="global-search" type="search" placeholder="記録・文献を検索" autocomplete="off"><span>↵</span></form><button class="header-help" type="button" id="help-button"><svg class="icon"><use href="#i-help"/></svg><span>使い方</span></button></div></header>
+<main class="content" id="main-content">
+<section id="view-explore" data-section="explore" aria-labelledby="explore-heading">
+<div class="view-heading"><div><h1 id="explore-heading"><span>形を動かして、</span><span>根拠を確かめる。</span></h1><p>展開式冷却フィンを想定して、6つの折り紙パターンを探索しましょう。</p></div><span class="scope-tag">NICOGRAPH 2026 / ポスター展示用デモ</span></div>
+<div class="explore-grid">
+<div class="viewer"><div class="viewer-top"><div><div class="eyebrow">INTERACTIVE FORM EXPLORER</div><div class="viewer-title" id="viewer-name">Miura-ori <small>三浦折り</small></div></div><span class="viewer-label">模式3D・解析なし</span></div><div class="shape-description" id="shape-description">表示形状：平行四辺形が連続するシート。展開すると平坦になります。</div><div class="canvas-wrap"><canvas id="main-canvas" role="img" aria-label="三浦折りの模式3D。ドラッグで視点を変更できます。"></canvas><div class="canvas-hint"><svg class="icon" style="width:13px;height:13px"><use href="#i-rotate"/></svg>ドラッグして回転 / スライダーで形を変更</div><div class="viewer-axis" aria-hidden="true"><svg viewBox="0 0 50 48"><path d="M20 27 43 34M20 27V5M20 27 4 39" stroke="#7f95b7"/><text x="43" y="43" fill="#a8bcda">x</text><text x="19" y="9" fill="#a8bcda">z</text><text x="0" y="47" fill="#a8bcda">y</text></svg></div></div>
+<div class="viewer-controls"><button id="animate-shape" class="button-icon" type="button" aria-label="図のアニメーションを再生" aria-pressed="false"><svg class="icon"><use href="#i-play"/></svg></button><div><div class="viewer-range-label"><label for="shape-open">模式図の開き具合</label><output id="shape-open-value" for="shape-open" aria-live="off">60 / 100</output></div><input id="shape-open" type="range" min="0" max="100" value="60" aria-describedby="shape-limit"></div><button id="reset-view" class="button-icon" type="button" aria-label="視点と形をリセット"><svg class="icon"><use href="#i-reset"/></svg></button></div><div class="viewer-disclaimer" id="shape-limit">図の操作位置は実測の展開率ではありません。右側の文献値や性能を計算する操作ではありません。</div></div>
+<aside class="research-card" id="research-card" aria-label="選択パターンの文献根拠"></aside>
+</div>
+<div class="pattern-toolbar"><div><h2>6つの候補から選ぶ</h2><span class="small">記録数は性能順位ではありません。</span></div><button class="btn" id="compare-pinned" type="button"><svg class="icon" style="width:15px;height:15px"><use href="#i-compare"/></svg><span id="pinned-label">2候補を比較</span></button></div>
+<div class="pattern-strip" id="pattern-strip"></div>
+<div class="info-strip"><svg class="icon"><use href="#i-info"/></svg><span><strong>根拠の種類と性能は別です。</strong> E1・E2・E3は調べ方の区分。NRは「根拠・変数が不足」であり、低性能を意味しません。</span><button type="button" data-go="about">区分を詳しく ↗</button></div>
+<div class="bottom-status"><span>出典：提供されたExcel V28とNICOGRAPH 2026原稿。原著の独立検証は行っていません。</span><span>ローカル動作 / 入力の外部送信なし</span></div>
+</section>
+
+<section id="view-library" data-section="library" aria-labelledby="library-heading" hidden>
+<div class="view-heading"><div><h1 id="library-heading">記録から、根拠をたどる。</h1><p>IDを押すと、元の記述・試験条件・出典ページを確認できます。</p></div><div class="heading-actions"><button type="button" class="btn primary" id="export-csv"><svg class="icon" style="width:15px;height:15px"><use href="#i-download"/></svg>検索結果をCSV保存</button></div></div>
+<div class="scope-row"><div class="segmented" role="group" aria-label="検索対象の範囲"><button type="button" data-scope="all" aria-pressed="true">全記録 558</button><button type="button" data-scope="main" aria-pressed="false">6候補 375</button><button type="button" data-scope="mapped" aria-pressed="false">C1〜C8 対応分 274</button></div><span class="row-count" id="results-count" role="status" aria-live="polite"></span></div>
+<form class="filters" id="library-filters" role="search"><div><label for="search-records">キーワード・ID・著者</label><input type="search" id="search-records" placeholder="例：EV-0550、放熱、Ahmed" autocomplete="off"></div><div><label for="filter-family">パターン</label><select id="filter-family"><option value="all">すべて</option></select></div><div><label for="filter-criterion">研究項目</label><select id="filter-criterion"><option value="all">すべて</option></select></div><div><label for="filter-level">根拠の種類</label><select id="filter-level"><option value="all">すべて</option><option value="E1">E1 定性記述</option><option value="E2">E2 解析・理論等</option><option value="E3">E3 物理実験</option></select></div><div><label for="filter-origin">出典の種類</label><select id="filter-origin"><option value="all">すべて</option><option value="review">総説由来</option><option value="other">総説以外</option></select></div></form>
+<div style="display:flex;justify-content:space-between;gap:15px;margin:0 2px 11px"><span class="small">表示値は元データを保持。区分はDB作成者の分類です。</span><button class="term-button" id="reset-filters" type="button">条件をクリア</button></div>
+<div class="records-table" tabindex="0" role="region" aria-label="検索結果。狭い画面では表を横にスクロールできます。"><table><thead><tr><th scope="col">記録 / パターン</th><th scope="col">何を確かめた？</th><th scope="col">報告値</th><th scope="col">根拠</th><th scope="col">出典</th><th scope="col"><span class="visually-hidden">詳細</span></th></tr></thead><tbody id="records-body"></tbody></table><div id="empty-results" class="empty-state" hidden>一致する記録がありません。キーワードやフィルターを変更してください。</div></div>
+<div class="pagination"><span id="page-range"></span><div class="pagination-buttons"><button type="button" class="btn" id="previous-page">← 前へ</button><span id="page-number"></span><button type="button" class="btn" id="next-page">次へ →</button></div></div>
+</section>
+
+<section id="view-compare" data-section="compare" aria-labelledby="compare-heading" hidden>
+<div class="view-heading"><div><h1 id="compare-heading">数字の前に、条件を比べる。</h1><p>2つの候補と研究項目を選び、根拠を1件ずつ並べてみましょう。</p></div><button class="btn" type="button" id="compare-to-plan">次の検証を考える ↗</button></div>
+<div class="compare-settings"><div><label for="compare-family-a">候補 A</label><select id="compare-family-a"></select></div><div><label for="compare-family-b">候補 B</label><select id="compare-family-b"></select></div><div><label for="compare-criterion">何を比べる？</label><select id="compare-criterion"></select></div></div>
+<div class="compare-columns" id="compare-columns"></div>
+<div class="verdict" role="status" aria-live="polite" aria-atomic="true"><svg class="icon"><use href="#i-info"/></svg><div><h3 id="compare-verdict-title"></h3><p id="compare-verdict-text"></p><div class="comparison-checks" id="comparison-checks"></div></div></div>
+<div class="matrix-toolbar"><h2 id="matrix-heading" tabindex="-1">6候補 × 8項目の根拠マップ</h2><span class="small">セルを押すと、対応する実際の記録が開きます。</span></div><div class="matrix-table" role="region" tabindex="0" aria-label="8項目の根拠表。横にスクロールできます。"><table><thead id="matrix-head"></thead><tbody id="matrix-body"></tbody></table></div><p class="matrix-note">記録数と代表区分を表示。C1・C3・C4・C8の＊は提出原稿の図3に対応し、条件差を分離できない状態を示します。C2・C5・C6・C7の「比較未確認」は候補間の条件を未確認で、＊とは別です。DB内の「可」だけでは候補間の直接比較を保証しません。NRを0点に換算せず、順位は計算しません。</p>
+</section>
+
+<section id="view-plan" data-section="plan" aria-labelledby="plan-heading" hidden>
+<div class="view-heading"><div><h1 id="plan-heading">不足するデータを、次の問いに。</h1><p>候補の不足情報を確認し、調査メモを作れます。</p></div><button class="btn primary" id="export-plan" type="button"><svg class="icon" style="width:15px;height:15px"><use href="#i-download"/></svg>調査メモを保存</button></div>
+<div class="plan-grid"><article class="panel"><div class="eyebrow">RESEARCH NOTE</div><h2 style="margin-top:9px">何を確認する必要がある？</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div><label class="record-picker-label" for="plan-family">候補</label><select id="plan-family"></select></div><div><label class="record-picker-label" for="plan-criterion">項目</label><select id="plan-criterion"></select></div></div><div class="gap-reason" id="plan-reason"></div><ul class="checklist" id="plan-checklist"></ul><p class="progress-label" id="plan-progress" role="status" aria-live="polite"></p><p class="small">チェックはメモに含める項目の選択です。実験完了や比較可能との判定を表しません。提案項目は、このデモが生成する調査のたたき台です。</p></article>
+<article class="panel"><div class="card-top"><span class="eyebrow">LEARNING TOOL</span><span class="tag demo">文献データとは別の計算</span></div><h2 style="margin-top:12px">軽量性は「質量 ÷ 面積」で考える。</h2><p class="small">DBのC8は6候補ともNR。同じ試験体の質量と有効展開面積が揃っていません。この計算でDBのNRは更新されません。</p><div class="formula">μ<sub>A</sub> = m / A<sub>eff</sub></div><div class="calc-form"><div><label for="mass-input">質量 m（g）</label><input type="number" id="mass-input" min="0" step="any" placeholder="例：20" inputmode="decimal"></div><div><label for="area-input">有効展開面積（cm²）</label><input type="number" id="area-input" min="0" step="any" placeholder="例：200" inputmode="decimal"></div></div><label class="calc-confirm"><input type="checkbox" id="same-specimen"><span>同じ試験体の値と面積の定義を確認した<br><span class="small">架空の例では、教材上の前提として確認します。</span></span></label><div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap"><button class="btn primary" id="calculate-density" type="button">面積密度を計算</button><button class="term-button" id="fill-example" type="button">架空の例を入力</button></div><div class="calc-result" id="density-result" role="status" aria-live="polite">質量と有効展開面積を入力してください。</div><p class="small" style="margin:0">g ÷ 1,000 → kg、cm² ÷ 10,000 → m²。別の論文や試験体の値を組み合わせて計算しないでください。</p></article></div>
+</section>
+
+<section id="view-about" data-section="about" aria-labelledby="about-heading" hidden>
+<div class="view-heading"><div><h1 id="about-heading">データの出どころと、研究の範囲。</h1><p>元の記録を保持し、候補間で比べられる範囲を明示します。</p></div><span class="tag demo">研究用プロトタイプ</span></div>
+<div class="about-stats" id="about-stats"></div><div class="provenance-grid"><article class="panel"><h2>根拠の種類を、点数にしません。</h2><ul class="definition-list"><li><span class="tag E1">E1</span><span>言葉や観察による定性的な記述。</span></li><li><span class="tag E2">E2</span><span>解析・理論・機械学習などの定量結果。総説中の数値も含みます。</span></li><li><span class="tag E3">E3</span><span>物理実験。特定の条件・試験体に対する根拠です。</span></li><li><span class="tag NR">NR</span><span>このDBでは根拠や必要変数が不足。低性能を意味しません。</span></li></ul><p>＊は提出原稿で定義した「条件差を分離できない」状態です。「比較未確認」はまだ候補間の条件を確認していない状態で、＊とは区別します。文献内で比較できても、別のパターンや材料へそのまま転用できるとは限りません。</p></article><article class="panel"><h2>論文と同じ範囲で説明します。</h2><p>提出済みのNICOGRAPH 2026原稿に基づくポスター展示用デモです。主要6候補とC1〜C8を扱い、図3の根拠区分と件数を保持します。画面操作と模式3Dは説明のための表示で、新たな検証結果を示すものではありません。DBのC9や予備スコアを性能ランキングには使いません。</p><p>DBは探索的に収集された文献記録です。分類は筆頭著者が付与し、再現性は未検証。原稿では実機の熱実験、MCDA順位付け、利用者評価は未実施です。</p><p>本アプリは提供Excelの固定スナップショットです。原著を独立に再検証したものではありません。模式3Dは理解のための形状表現で、剛体折り・干渉・応力・温度の解析は行いません。</p></article></div>
+<div class="notice"><p><strong>元ブック内の旧説明を区別しています。</strong>「候補スクリーニング」A2と「基準マスタ」G8にはC4が未充足という旧説明が残っています。一方、性能エビデンスと正規化索引には現在の熱記録があります。本アプリは558件の記録と索引から件数を再集計し、旧説明や予備点数を採用判定に使いません。</p></div>
+<div class="matrix-toolbar"><h2>文献マスタ / 26件</h2><span class="small">IDで記録に戻れます。外部リンクは原ファイルに記載された出典です。</span></div><div class="panel literature-list" id="literature-list"></div><div class="data-footer" id="data-footer"></div>
+</section>
+</main></div></div>
+
+<dialog id="record-dialog" aria-labelledby="record-dialog-title"><div class="dialog-header"><div><span class="eyebrow" id="record-dialog-kicker"></span><h2 id="record-dialog-title"></h2></div><button type="button" class="button-icon" data-close="record-dialog" aria-label="記録の詳細を閉じる"><svg class="icon"><use href="#i-close"/></svg></button></div><div class="dialog-body" id="record-dialog-body"></div></dialog>
+<dialog id="cell-dialog" aria-labelledby="cell-dialog-title"><div class="dialog-header"><div><span class="eyebrow">EVIDENCE MAP</span><h2 id="cell-dialog-title"></h2></div><button type="button" class="button-icon" data-close="cell-dialog" aria-label="根拠一覧を閉じる"><svg class="icon"><use href="#i-close"/></svg></button></div><div class="dialog-body" id="cell-dialog-body"></div></dialog>
+<dialog class="help-dialog" id="help-dialog" aria-labelledby="help-title"><div class="dialog-header"><div><span class="eyebrow">QUICK GUIDE</span><h2 id="help-title">3つの操作で、根拠を確認。</h2></div><button type="button" class="button-icon" data-close="help-dialog" aria-label="使い方を閉じる"><svg class="icon"><use href="#i-close"/></svg></button></div><div class="dialog-body"><div class="help-step"><span class="help-number">1</span><div><h3>形を選んで動かす</h3><p>カードを選び、ドラッグで回転。図は模式図で、熱性能を予測するモデルではありません。</p></div></div><div class="help-step"><span class="help-number">2</span><div><h3>記録と出典をたどる</h3><p>「根拠を調べる」で558件を検索できます。IDを押すと元の値・材料・条件・ページが開きます。</p></div></div><div class="help-step"><span class="help-number">3</span><div><h3>比較できない理由を確認する</h3><p>候補と項目を選び、記録を並べます。指標・比較基準・条件が揃わないときは、その理由を示します。</p></div></div><div class="notice"><p>NRは「低性能」ではありません。E3の存在だけで最良候補とは言えません。この試作は性能順位や採用判定を出しません。</p></div></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+<noscript><div style="padding:30px;background:white">このプロトタイプの操作にはJavaScriptが必要です。外部ネットワーク接続は不要です。</div></noscript>
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+<symbol id="i-shape" viewBox="0 0 24 24"><path d="m3 7 9-4 9 4-9 14Zm0 0 9 5 9-5M12 3v18"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h6l2 2 2-2h6v16h-6l-2 1-2-1H4Zm8 2v15M7 8h2M7 12h2m6-4h2m-2 4h2"/></symbol>
+<symbol id="i-compare" viewBox="0 0 24 24"><path d="M3 4h7v16H3Zm11 0h7v16h-7M6 8h1m10 0h1M6 12h1m10 0h1"/></symbol>
+<symbol id="i-note" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8Zm0 0v5h5M8 12h8m-8 4h6"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 10v7m0-10v.1"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 0 1 6 0c0 3-3 2-3 5m0 3v.1"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 11 8-11 8Z"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14m8-14v14"/></symbol>
+<symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></symbol>
+<symbol id="i-rotate" viewBox="0 0 24 24"><path d="M6 8 3 5l3-3M3 5h8a8 8 0 1 1-7 12"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+</defs></svg>
+
+<script src="data.js"></script>
+<script src="shapes.js"></script>
+<script src="visitor.js"></script>
+<script src="app.js"></script>
+</body></html>
